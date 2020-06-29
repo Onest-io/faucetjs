@@ -1,11 +1,11 @@
 {
-  "name": "xbts-faucet",
+  "name": "faucetjs",
   "version": "0.0.1",
-  "description": "NodeJS BitShares Faucet",
-  "author": "technologiespro",
-  "homepage": "https://github.com/technologiespro/xbts-faucet",
+  "description": "NodeJS Onest Faucet",
+  "author": "onest",
+  "homepage": "https://github.com/Onest-io/faucetjs",
   "contributors": [
-    "technologiespro"
+    "onest"
   ],
   "private": true,
   "license": "MIT",
@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/technologiespro/xbts-faucet"
+    "url": "git://github.com/Onest-io/faucetjs"
   },
   "keywords": [
     "nodejs",
-    "bitshares",
-    "xbts",
+    "Onest",
+    "ioBanker",
     "faucet",
-    "bts",
+    "ons",
     "registration"
   ],
   "scripts": {
