@@ -1,6 +1,6 @@
-# Faucet XBTS DEX
+# Faucet Onest
 
-Faucet XBTS DEX is used to pay the registration fee for new Bitshares users.
+Faucet Onest is used to pay the registration fee for new Onest users.
 In order to ensure Anonymity of the user's IP, his IP-address is hashed.
 
 ## NodeJS Setup (if necessary)
@@ -18,8 +18,8 @@ npm install -g npm forever grunt-cli
 
 ## Install App
 ```
-git clone https://github.com/technologiespro/xbts-faucet.git
-cd xbts-faucet
+git clone https://github.com/Onest-io/faucetjs.git
+cd faucetjs
 npm install
 ```
 
