@@ -3,7 +3,7 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'BitShares Faucet API' });
+  res.render('index', { title: 'Onest Faucet API' });
 });
 
 module.exports = router;
