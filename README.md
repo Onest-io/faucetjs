@@ -32,15 +32,15 @@ nano config.json
 Set
 
 - port - app port number default 48887 up to 65535
-- bts.node - public bitshares api node
-- bts.registrar - registrar account
-- bts.wif - registrar account private active key
-- bts.default_referrer - default referrer account name
-- bts.referrer_percent - referrer percent
-- bts.broadcastTx - default true, for testing set false
-- bts.timeoutIp - default 1800 sec (30 min) registration time on 1 ip
-- bts.allowPremium - default false, registration premium names
-- bts.allowCustomerReferer - default true, false - always use referrer from config
+- ons.node - public bitshares api node
+- ons.registrar - registrar account
+- ons.wif - registrar account private active key
+- ons.default_referrer - default referrer account name
+- ons.referrer_percent - referrer percent
+- ons.broadcastTx - default true, for testing set false
+- ons.timeoutIp - default 1800 sec (30 min) registration time on 1 ip
+- ons.allowPremium - default false, registration premium names
+- ons.allowCustomerReferer - default true, false - always use referrer from config
 
 save and exit from nano editor: CTRL+O, CTRL+X
 
