@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 const jsonFile = require('jsonfile');
 process.env.PORT = jsonFile.readFileSync('./config.json').port;
-console.log("BitShares Faucet Running on port:", process.env.PORT);
+console.log("Onest Faucet Running on port:", process.env.PORT);
 
 const indexRouter = require('./routes/index');
 const apiRouter = require('./routes/api');
