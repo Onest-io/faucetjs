@@ -1,10 +1,10 @@
 {
   "port": 48887,
   "bts": {
-    "node": "wss://cloud.xbts.io/ws",
-    "registrar": "xbtsio-wallet",
+    "node": "wss://seed01.ons.network:9090",
+    "registrar": "iobanker",
     "wif": "your_private_active_key_here",
-    "default_referrer": "xbtsio-wallet",
+    "default_referrer": "iobanker",
     "referrer_percent": 50,
     "core_asset": "BTS",
     "timeoutIp": 1800,
