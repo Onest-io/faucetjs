@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Onest = require('onsdex')
+const Onest = require('btsdex')
 const level = require('level')
 const JsonFile = require('jsonfile')
 const config = JsonFile.readFileSync('./config.json')
