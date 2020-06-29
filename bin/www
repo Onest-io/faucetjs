@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('xbts-faucet:server');
+var debug = require('debug')('faucetjs:server');
 var http = require('http');
 
 /**
