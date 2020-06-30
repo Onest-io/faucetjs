@@ -44,7 +44,7 @@ async function getReferrer(account_name) {
 
 
 async function startAfterConnected() {
-    //acc = await Onest.login(config.ons.registrar, config.ons.password)
+    //acc = await BitShares.login(config.ons.registrar, config.ons.password)
     console.log('-------------------------------------------------')
     acc = new BitShares(config.ons.registrar, config.ons.wif)
 
