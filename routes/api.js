@@ -20,7 +20,7 @@ let registrar = null
 let assetId = "1.3.0"
 let referrer = "iobanker"
 
-BitShares.connect(config.ons.node);
+BitShares.connect(config.bts.node);
 BitShares.subscribe('connected', startAfterConnected);
 
 async function is_cheap_name(account_name) {
@@ -44,23 +44,23 @@ async function getReferrer(account_name) {
 
 
 async function startAfterConnected() {
-    //acc = await BitShares.login(config.ons.registrar, config.ons.password)
+    //acc = await BitShares.login(config.bts.registrar, config.bts.password)
     console.log('-------------------------------------------------')
-    acc = new BitShares(config.ons.registrar, config.ons.wif)
+    acc = new BitShares(config.bts.registrar, config.bts.wif)
 
-    registrar = await BitShares.accounts[config.ons.registrar]
+    registrar = await BitShares.accounts[config.bts.registrar]
     console.log('registrar', registrar.id, registrar.name)
 
     countRegs = await dbu.dbGet(db, '0xREG') || 0
     console.log('countRegs', countRegs)
 
-    assetId = (await BitShares.assets[config.ons.core_asset]).id
-    console.log('assetId', assetId, config.ons.core_asset)
+    assetId = (await BitShares.assets[config.bts.core_asset]).id
+    console.log('assetId', assetId, config.bts.core_asset)
 
-    referrer = await BitShares.accounts[config.ons.default_referrer]
+    referrer = await BitShares.accounts[config.bts.default_referrer]
 
     console.log('default referrer', referrer.id, referrer.name)
-    console.log('premium names', config.ons.allowPremium)
+    console.log('premium names', config.bts.allowPremium)
     console.log('-------------------------------------------------')
 }
 
@@ -78,13 +78,13 @@ async function registerAccount(options, ip) {
     }
 
     if (latestRegs[ip]) {
-        let time = Math.floor(Date.now() / 1000) - config.ons.timeoutIp
+        let time = Math.floor(Date.now() / 1000) - config.bts.timeoutIp
         isAllowReg = time > latestRegs[ip].time
         //console.log('hold sec', latestRegs[ip].time - time)
     }
 
     if (!isAllowReg) {
-        result = {"error": {"base": ["Only one account per IP " + config.ons.timeoutIp / 60 + " min"]}}
+        result = {"error": {"base": ["Only one account per IP " + config.bts.timeoutIp / 60 + " min"]}}
         return result
     }
 
@@ -93,17 +93,17 @@ async function registerAccount(options, ip) {
         name: options.name,
     }
 
-    if (options.referrer && config.ons.allowCustomerReferer) {
+    if (options.referrer && config.bts.allowCustomerReferer) {
         userReferrer = await getReferrer(options.referrer)
     }
 
-    if (config.ons.broadcastTx && isAllowReg) {
+    if (config.bts.broadcastTx && isAllowReg) {
         let params = {
             fee: {amount: 0, asset_id: assetId},
             name: options.name,
             registrar: registrar.id,
             referrer: userReferrer.id,
-            referrer_percent: config.ons.referrer_percent * 100,
+            referrer_percent: config.bts.referrer_percent * 100,
             owner: {
                 weight_threshold: 1,
                 account_auths: [],
@@ -175,7 +175,7 @@ router.post('/v1/accounts', async function (req, res, next) {
     let result = false
     let err = false
     let name = (req.body.account.name).toLowerCase()
-    if (!config.ons.allowPremium) {
+    if (!config.bts.allowPremium) {
         err = !(await is_cheap_name(name)) // is not cheap name = true
     }
     if (req.body.account && !err) {
