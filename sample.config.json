@@ -1,7 +1,7 @@
 {
   "port": 48887,
   "bts": {
-    "node": "wss://seed01.ons.network:9090",
+    "node": "wss://dex.onest.io:9090",
     "registrar": "iobanker",
     "wif": "your_private_active_key_here",
     "default_referrer": "iobanker",
