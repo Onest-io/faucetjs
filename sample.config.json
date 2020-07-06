@@ -6,7 +6,7 @@
     "wif": "your_private_active_key_here",
     "default_referrer": "iobanker",
     "referrer_percent": 50,
-    "core_asset": "BTS",
+    "core_asset": "ONS",
     "timeoutIp": 1800,
     "broadcastTx": true,
     "allowPremium": false,
